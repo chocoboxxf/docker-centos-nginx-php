@@ -38,4 +38,9 @@ EXPOSE 80 443
 
 ADD container-files/script/* /tmp/script/
 
+# put customized config and code files to /data
+
+VOLUME ["/data"]
+WORKDIR /data
+
 ENTRYPOINT ["/tmp/script/bootstrap.sh"]
