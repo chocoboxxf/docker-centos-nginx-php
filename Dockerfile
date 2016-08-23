@@ -4,7 +4,7 @@ MAINTAINER https://github.com/chocoboxxf/docker-centos-nginx-php
 # add nginx, php files
 
 ADD container-files/soft/nginx-1.10.1.bin.tar.gz /tmp/soft/
-ADD container-files/soft/php-7.0.9.bin.tar.gz /tmp/soft/
+ADD container-files/soft/php-7.0.10.bin.tar.gz /tmp/soft/
 ADD container-files/conf/* /tmp/conf/
 
 RUN \
@@ -18,9 +18,9 @@ RUN \
   mkdir -p /root/programs && \
   cd /root/programs && \
   cp -rf /tmp/soft/nginx-1.10.1 /root/programs/nginx-1.10.1 && \
-  cp -rf /tmp/soft/php-7.0.9 /root/programs/php-7.0.9 && \
+  cp -rf /tmp/soft/php-7.0.10 /root/programs/php-7.0.10 && \
   ln -sf /root/programs/nginx-1.10.1 /root/programs/nginx && \
-  ln -sf /root/programs/php-7.0.9 /root/programs/php && \
+  ln -sf /root/programs/php-7.0.10 /root/programs/php && \
  
   `# copying nginx & php config files ...` \
   cp -f /tmp/conf/nginx.conf /root/programs/nginx/conf/nginx.conf && \
